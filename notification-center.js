@@ -32,17 +32,12 @@
 
   const handleCloseButtonClicked = () => {
     const notification = notifications.pop();
-    if (!notification) {
-      return;
-    }
-
-    notification.close();
+    notification && notification.close();
   };
 
+  // Add event listeners
   const showButton = document.querySelector('#show');
   const closeButton = document.querySelector('#close');
-
-  // Add event listeners
   showButton.addEventListener('click', handleShowButtonClicked, false);
   closeButton.addEventListener('click', handleCloseButtonClicked, false);
 })();
